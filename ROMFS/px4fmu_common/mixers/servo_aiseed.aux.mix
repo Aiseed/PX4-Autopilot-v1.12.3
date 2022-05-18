@@ -1,0 +1,27 @@
+# mixer for servo outputs 1-6
+# command to control aux output with control group 6
+
+# AUX1 channel
+M: 1
+S: 6 0  10000  10000      0 -10000  10000
+
+# AUX2 channel
+M: 1
+S: 6 1  10000  10000      0 -10000  10000
+
+# AUX3 channel
+M: 1
+S: 6 2  10000  10000      0 -10000  10000
+
+# AUX4 channel
+M: 1
+S: 6 3  10000  10000      0 -10000  10000
+
+# AUX5 channel
+M: 1
+S: 6 4  10000  10000      0 -10000  10000
+
+# AUX6 channel
+M: 1
+S: 6 5  10000  10000      0 -10000  10000
+
