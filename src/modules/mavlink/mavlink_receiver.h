@@ -351,8 +351,8 @@ private:
 	uORB::Subscription	_vehicle_local_position_sub{ORB_ID(vehicle_local_position)};
 	uORB::Subscription	_vehicle_global_position_sub{ORB_ID(vehicle_global_position)};
 	uORB::Subscription	_vehicle_status_sub{ORB_ID(vehicle_status)};
-	uORB::Subscription 	_actuator_controls_3_sub{ORB_ID(actuator_controls_3)};
-	// uORB::Subscription 	_actuator_controls_2_sub{ORB_ID(actuator_controls_2)};
+	//uORB::Subscription 	_actuator_controls_3_sub{ORB_ID(actuator_controls_3)};
+	uORB::Subscription 	_actuator_controls_2_sub{ORB_ID(actuator_controls_2)};
 	uORB::Subscription	_autotune_attitude_control_status_sub{ORB_ID(autotune_attitude_control_status)};
 
 	uORB::SubscriptionInterval _parameter_update_sub{ORB_ID(parameter_update), 1_s};
