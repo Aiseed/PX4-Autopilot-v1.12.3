@@ -584,53 +584,6 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 				_actuator_controls_pubs[3].publish(actuator_controls);
 			}
 		}
-        /// actuator test ///
-        /*
-        if (((int) vehicle_command.param7) == 0) {
-			actuator_controls_s actuator_controls{};
-			// update with existing values to avoid changing unspecified controls
-			// _actuator_controls_2_sub.update(&actuator_controls);
-
-			actuator_controls.timestamp = hrt_absolute_time();
-
-			bool updated = false;
-
-			if (PX4_ISFINITE(vehicle_command.param1)) {
-				actuator_controls.control[0] = vehicle_command.param1;
-				updated = true;
-			}
-			
-            if (PX4_ISFINITE(vehicle_command.param1)) {
-				actuator_controls.control[1] = vehicle_command.param2;
-				updated = true;
-			}
-
-			if (PX4_ISFINITE(vehicle_command.param2)) {
-				actuator_controls.control[2] = vehicle_command.param3;
-				updated = true;
-			}
-
-			if (PX4_ISFINITE(vehicle_command.param3)) {
-				actuator_controls.control[3] = vehicle_command.param4;
-				updated = true;
-			}
-			
-            if (PX4_ISFINITE(vehicle_command.param1)) {
-				actuator_controls.control[4] = vehicle_command.param5;
-				updated = true;
-			}
-
-			if (PX4_ISFINITE(vehicle_command.param2)) {
-				actuator_controls.control[5] = vehicle_command.param6;
-				updated = true;
-			}
-
-			if (updated) {
-				_actuator_controls_pubs[2].publish(actuator_controls);
-			}
-		}
-        */
-        /// actuator test ///
 		_cmd_pub.publish(vehicle_command);
 
 	} else if (cmd_mavlink.command == MAV_CMD_DO_AUTOTUNE_ENABLE) {
