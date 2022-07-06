@@ -11,8 +11,8 @@
     <arg name="Y" default="0"/>
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
-    <arg name="vehicle" default="iris"/>
-    <arg name="plus_sensor" default="iris_depth_irlock_aiseed"/>
+    <arg name="vehicle" default="standard_vtol"/>
+    <arg name="plus_sensor" default="standard_vtol_gimbal_irlock_aiseed"/>
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/baylands_aiseed.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg plus_sensor)/$(arg plus_sensor).sdf"/>
     <env name="PX4_SIM_MODEL" value="$(arg vehicle)" />
