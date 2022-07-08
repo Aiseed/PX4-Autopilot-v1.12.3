@@ -5,7 +5,7 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle1" default="boat"/>
-    <arg name="plus_sensor1" default="boat_beacon_aiseed"/>
+    <arg name="plus_sensor1" default="boat"/>
     <arg name="vehicle2" default="standard_vtol"/>
     <arg name="plus_sensor2" default="standard_vtol_gimbal_irlock_aiseed"/>
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/boat.world"/>
@@ -58,7 +58,7 @@
         <include file="$(find px4)/launch/single_vehicle_spawn_sdf_aiseed.launch">
             <arg name="x" value="0"/>
             <arg name="y" value="0"/>
-            <arg name="z" value="1.3"/>
+            <arg name="z" value="1.6"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
             <arg name="Y" value="0"/>
@@ -76,6 +76,15 @@
             <arg name="tgt_component" value="1"/>
         </include>
     </group>
+    <!-- gazebo model -->
+    <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/irlock_beacon_aiseed/irlock_beacon_aiseed.sdf"/>
+    <arg name="x" value="-0.5"/>
+    <arg name="y" value="-1.5"/>
+    <arg name="z" value="1.5"/>
+    <arg name="R" value="0"/>
+    <arg name="P" value="0"/>
+    <arg name="Y" value="0"/>
+    <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model irlock_beacon  -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
 </launch>
 <!-- to add more UAVs (up to 10):
 Increase the id
