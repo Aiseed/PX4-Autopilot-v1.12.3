@@ -225,7 +225,6 @@ manual_control start
 sensors start
 commander start
 navigator start
-landing_target_estimator start
 
 
 # Try to start the micrortps_client with UDP transport if module exists
